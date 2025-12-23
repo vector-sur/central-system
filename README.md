@@ -3,10 +3,10 @@
 ## Class Diagram
 
 ```mermaid
+ classDiagram
 
-classDiagram
-
-    Trip *-- User
+    Order *-- User
+    Trip *--  Order
     Trip *-- Location : from
     Trip *-- Location : to
     Trip *-- Drone
@@ -18,6 +18,12 @@ classDiagram
     Report *-- ReportCategory
     ProhibitedZone *-- Location
 
+    class Order {
+        +number: int
+        +date: date_time
+        +state: OrderState
+    }
+    
     class Trip {
         +request_time: date_time
         +weight: float
@@ -90,6 +96,14 @@ classDiagram
         +Finished
         +Canceled
         +Unfinished
+    }
+
+    class OrderState {
+        <<enumeration>>
+        +Requested
+        +Finished
+        +Canceled
+        +Uncomplete
     }
 
     class IGPS {
