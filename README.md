@@ -1,4 +1,6 @@
-# central-system
+# Central System
+
+## Class Diagram
 
 ```mermaid
 
